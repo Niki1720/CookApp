@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <script th:include="fragments/header :: headerScripts" th:remove="tag"></script>
+  <title>Lodówka</title>
+</head>
+<body >
+
+  <div class="table-responsive" align="center">
+
+    <div th:replace="fragments/components :: myNavbar"></div>
+    </br> </br>
+    <h1 align="center">Fridge</h1>
+    </br>
+    <a  th:href="@{/ingredient/add}" class="btn btn-info btn-lg me-md-2 mb-3 ">New ingredient</a>
+    </br>
+    <table class="table table-primary table-bordered">
+      <thead>
+      <tr>
+        <th scope="col">Nazwa składnika</th>
+        <th scope="col">Stan</th>
+        <th scope="col">Zmień</th>
+        <th scope="col">Usuń</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="item : ${ingredientsList}">
+        <td th:hidden="${item.id}"></td>
+        <td th:text="*{item.ingredientName}"></td>
+        <td th:text="*{item.ingredientStorage}"></td>
+        <td> <a th:href="@{/ingredient/uptade/{id}(id=${item.id})}" class="btn btn-outline-success">Edit</a> </td>
+        <td><a th:href="@{/ingredient/deleteIng/{id}(id=${item.id})}" class="btn btn-outline-danger">Delete</a></td>
+      </tr>
+      </tbody>
+    </table>
+    </br> </br>
+    <div th:replace="fragments/components :: footer"></div>
+  </div>
+</div>
+</body>
+</html>

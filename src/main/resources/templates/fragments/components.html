@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body >
+<header th:fragment="header">
+    <h1 style="padding-top:50px">Hungry student</h1>
+</header>
+
+<nav th:fragment="menu">
+    <ul class="nav justify-content-end">
+        <li class="nav-item"><a class="nav-link active"
+                                aria-current="page" href="#">Aktywne menu</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item"><a class="nav-link disabled" href="#"
+                                tabindex="-1" aria-disabled="true">Disabled</a></li>
+    </ul>
+</nav>
+
+<nav th:fragment="myNavbar">
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            </div>
+        </div>
+    </nav>
+</nav>
+
+<footer th:fragment="footer">
+    <p>&copy; 2022 Szarek Karolina</p>
+</footer>
+</body>
+</html>
